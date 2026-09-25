@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --radius-md: var(--radius);
+}
+
+:root {
+  color-scheme: light;
+  --background: oklch(0.98 0.008 105);
+  --foreground: oklch(0.28 0.04 205);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.28 0.04 205);
+  --primary: oklch(0.31 0.07 215);
+  --primary-foreground: oklch(0.98 0.008 105);
+  --border: oklch(0.88 0.025 160);
+  --ring: oklch(0.55 0.08 160);
+  --radius: 0.15rem;
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground; font-family: Arial, Helvetica, sans-serif; }
+  a, button { cursor: pointer; }
+  :focus-visible { outline: 2px solid #66877d; outline-offset: 3px; }
+}
+
+.font-serif { font-family: Georgia, 'Times New Roman', serif; }
+.eyebrow { margin-bottom: 1.25rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #66877d; }
+.section-title { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.04; color: #163b4a; }
+.section-title em { font-weight: 400; color: #66877d; }
+::selection { background: #b8cfc3; color: #163b4a; }
