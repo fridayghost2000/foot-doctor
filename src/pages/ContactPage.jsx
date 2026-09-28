@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { clinicData } from '@/data/clinicData'
 import { PageHero } from '@/components/common/PageHero'
+import { FAQSection } from '@/components/common/FAQSection'
 
 export function ContactPage() {
   const handleSubmit = (e) => {
@@ -98,6 +99,8 @@ export function ContactPage() {
           </form>
         </div>
       </main>
+
+      <FAQSection />
     </>
   )
 }

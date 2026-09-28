@@ -1,13 +1,12 @@
 import { ArrowRight, Check } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { conditions } from '@/data/conditionsData'
 import { PageHero } from '@/components/common/PageHero'
+import { FAQSection } from '@/components/common/FAQSection'
 import { AppointmentCTA } from '@/components/common/AppointmentCTA'
 import { Button } from '@/components/common/Button'
-import { useRouter } from '@/hooks/useRouter'
 
 export function ConditionsPage() {
-  const { navigate } = useRouter()
-
   return (
     <>
       <PageHero
@@ -32,12 +31,8 @@ export function ConditionsPage() {
                     isImageLeft ? 'lg:order-1' : 'lg:order-2'
                   }`}
                 >
-                  <a
-                    href={item.href || `/${item.slug}/`}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      navigate(item.href || `/${item.slug}/`)
-                    }}
+                  <Link
+                    to={item.href || `/${item.slug}/`}
                     className="group relative block overflow-hidden rounded-xl bg-[#0e2732] shadow-md border-4 border-white cursor-pointer"
                   >
                     <img
@@ -59,7 +54,7 @@ export function ConditionsPage() {
                         {item.title}
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Condition Content Column (7 cols) - Clear, Readable & Spacious */}
@@ -75,16 +70,12 @@ export function ConditionsPage() {
                   </div>
 
                   <h2 className="font-serif text-2xl sm:text-3xl lg:text-[32px] text-[#163b4a] leading-snug">
-                    <a
-                      href={item.href || `/${item.slug}/`}
-                      onClick={(e) => {
-                        e.preventDefault()
-                        navigate(item.href || `/${item.slug}/`)
-                      }}
+                    <Link
+                      to={item.href || `/${item.slug}/`}
                       className="hover:text-[#255264] transition-colors cursor-pointer"
                     >
                       {item.title}
-                    </a>
+                    </Link>
                   </h2>
 
                   <p className="mt-3.5 text-[16px] sm:text-[17px] leading-7 text-[#44605b]">
@@ -116,16 +107,12 @@ export function ConditionsPage() {
                     >
                       Explore treatment
                     </Button>
-                    <a
-                      href={item.href || `/${item.slug}/`}
-                      onClick={(e) => {
-                        e.preventDefault()
-                        navigate(item.href || `/${item.slug}/`)
-                      }}
+                    <Link
+                      to={item.href || `/${item.slug}/`}
                       className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#3f655b] hover:text-[#163b4a] hover:underline"
                     >
                       Learn more <ArrowRight size={13} />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </article>
@@ -134,6 +121,7 @@ export function ConditionsPage() {
         </div>
       </main>
 
+      <FAQSection />
       <AppointmentCTA />
     </>
   )

@@ -1,4 +1,5 @@
 import { ArrowRight, Building2, HeartPulse, Phone, ShieldCheck, Sparkles, Stethoscope } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import doctorImage from '@/assets/images/dr.image.jpg'
 import doctorPortraitImage from '@/assets/images/dr.image2.jpg'
 import clinicRoomImage from '@/assets/images/clinic-room.jpg'
@@ -16,7 +17,6 @@ import { FeatureCard } from '@/components/common/FeatureCard'
 import { Testimonials } from '@/components/common/Testimonials'
 import { FAQSection } from '@/components/common/FAQSection'
 import { AppointmentCTA } from '@/components/common/AppointmentCTA'
-import { useRouter } from '@/hooks/useRouter'
 
 const conditionImages = {
   'foot-ankle-conditions': neuropathyImage,
@@ -36,8 +36,6 @@ const conditionImages = {
 }
 
 export function HomePage() {
-  const { navigate } = useRouter()
-
   const featureIcons = {
     HeartPulse: <HeartPulse size={20} />,
     Sparkles: <Sparkles size={20} />,
@@ -182,8 +180,8 @@ export function HomePage() {
 
       {/* Common Concerns / Conditions Section */}
       <section className="bg-[#f4f7f3] px-6 py-20 lg:px-10 lg:py-24">
-        <div className="mx-auto max-w-5xl">
-          {/* Section Header - Perfectly aligned to page & cards grid */}
+        <div className="mx-auto max-w-6xl">
+          {/* Section Header - Compact and clean */}
           <div className="mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>
               <p className="eyebrow !mb-2">
@@ -202,17 +200,13 @@ export function HomePage() {
             </div>
           </div>
 
-          {/* Cards Grid - 3 Columns with slightly smaller square cards */}
+          {/* Cards Grid - 3 Columns with slightly smaller card dimensions */}
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {conditions.slice(0, 6).map((item, i) => (
-              <a
+              <Link
                 key={item.slug}
-                href={item.href || `/${item.slug}/`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  navigate(item.href || `/${item.slug}/`)
-                }}
-                className="group relative flex aspect-square flex-col justify-between overflow-hidden rounded-2xl p-5 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer border border-[#d6e2dc]"
+                to={item.href || `/${item.slug}/`}
+                className="group relative flex min-h-[300px] sm:min-h-[320px] flex-col justify-between overflow-hidden p-5 sm:p-5.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer border border-[#d6e2dc]"
               >
                 {/* Background Image with smooth hover zoom */}
                 <img
@@ -220,34 +214,35 @@ export function HomePage() {
                   alt={item.title}
                   className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-108"
                 />
-                {/* Gradient overlay for clear legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#081c25]/95 via-[#163b4a]/55 to-black/15 transition-opacity duration-300 group-hover:via-[#163b4a]/45" />
+                {/* Gradient overlay for clear text contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#081c25]/95 via-[#163b4a]/65 to-black/30 transition-opacity duration-300 group-hover:via-[#163b4a]/55" />
 
                 {/* Top: Number indicator */}
                 <div className="relative z-10 flex items-center justify-between">
-                  <span className="inline-block rounded-full bg-[#163b4a]/85 px-3 py-0.5 text-xs font-bold tracking-wider text-[#dcebe5] backdrop-blur-xs border border-white/20">
+                  <span className="inline-block bg-[#163b4a]/90 px-2.5 py-0.5 text-xs font-bold tracking-wider text-[#dcebe5] backdrop-blur-xs border border-white/20">
                     0{i + 1}
                   </span>
                 </div>
 
-                {/* Bottom: Main Title and Learn more Action (Equalized height) */}
+                {/* Bottom: Main Title, Short Description and Learn more Action */}
                 <div className="relative z-10 mt-auto">
-                  <div className="min-h-[48px] flex items-end">
-                    <h3 className="font-serif text-lg sm:text-xl leading-snug text-white font-medium drop-shadow-xs group-hover:text-[#dcebe5] transition-colors">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <div className="mt-3 pt-3 border-t border-white/20 flex items-center justify-between">
+                  <h3 className="font-serif text-lg sm:text-[19px] leading-snug text-white font-medium drop-shadow-xs group-hover:text-[#dcebe5] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1.5 text-xs sm:text-[13px] leading-relaxed text-[#dbe8e3] line-clamp-2">
+                    {item.shortSummary || item.summary}
+                  </p>
+                  <div className="mt-3.5 pt-2.5 border-t border-white/20 flex items-center justify-between">
                     <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#dcebe5] transition-colors group-hover:text-white">
                       Learn more{' '}
                       <ArrowRight
-                        size={13}
+                        size={12}
                         className="transition-transform duration-300 group-hover:translate-x-1"
                       />
                     </span>
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

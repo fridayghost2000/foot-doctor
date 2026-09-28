@@ -1,14 +1,16 @@
-import { RouterProvider } from '@/router/RouterContext'
+import { BrowserRouter } from 'react-router-dom'
 import { Layout } from '@/components/layout/Layout'
-import { AppRoutes } from '@/router/AppRoutes'
+import { AppRoutes } from '@/app/routes'
+import { ScrollToTop } from '@/components/common/ScrollToTop'
 
 export function App() {
   return (
-    <RouterProvider>
+    <BrowserRouter>
+      <ScrollToTop />
       <Layout>
         <AppRoutes />
       </Layout>
-    </RouterProvider>
+    </BrowserRouter>
   )
 }
 

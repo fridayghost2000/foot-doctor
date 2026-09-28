@@ -1,25 +1,22 @@
-import { useRouter } from '@/hooks/useRouter'
+import { NavLink as RouterNavLink } from 'react-router-dom'
 
 export function NavLink({ href, children, className = '', activeClassName = '', onClick }) {
-  const { path, navigate } = useRouter()
-  const isActive = path === href
-
-  const handleClick = (e) => {
-    if (href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:')) {
-      return
-    }
-    e.preventDefault()
-    if (onClick) onClick(e)
-    navigate(href)
+  // External links
+  if (href && (href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:'))) {
+    return (
+      <a href={href} onClick={onClick} className={className}>
+        {children}
+      </a>
+    )
   }
 
   return (
-    <a
-      href={href}
-      onClick={handleClick}
-      className={`${className} ${isActive ? activeClassName : ''}`}
+    <RouterNavLink
+      to={href}
+      onClick={onClick}
+      className={({ isActive }) => `${className} ${isActive ? activeClassName : ''}`}
     >
       {children}
-    </a>
+    </RouterNavLink>
   )
 }

@@ -13,8 +13,10 @@ export const conditions = [
     href: '/foot-ankle-conditions/',
     title: 'Foot & Ankle Conditions',
     image: neuropathyImg,
+    shortSummary:
+      'Individualized evaluation and conservative care for general podiatry patients age 16 and older.',
     summary:
-      'Dr. Celine Soltani provides evaluation and treatment for a wide range of foot and ankle conditions for general podiatry patients age 16 and older. Treatment is individualized, with an emphasis on conservative care whenever appropriate. In addition to traditional conservative care, advanced non-surgical treatment options may be available for selected patients. Treatment recommendations are individualized based on the condition, examination, medical history, and treatment goals.',
+      'Individualized evaluation and conservative care for a wide range of foot and ankle conditions for general podiatry patients age 16 and older.',
     description:
       'Dr. Celine Soltani provides evaluation and treatment for a wide range of foot and ankle conditions for general podiatry patients age 16 and older. Treatment is individualized, with an emphasis on conservative care whenever appropriate. In addition to traditional conservative care, advanced non-surgical treatment options may be available for selected patients. Treatment recommendations are individualized based on the condition, examination, medical history, and treatment goals.',
     symptoms: [
@@ -42,6 +44,8 @@ export const conditions = [
     href: '/heel-pain-plantar-fasciitis/',
     title: 'Heel Pain & Plantar Fasciitis',
     image: heelPainImg,
+    shortSummary:
+      'Personalized conservative care to relieve bottom-of-heel pain, morning stiffness, and arch discomfort.',
     summary:
       'Heel pain is common, but the cause is not always the same. Dr. Soltani evaluates heel pain in general podiatry patients age 16 and older and develops an individualized treatment plan.',
     description:
@@ -94,6 +98,8 @@ export const conditions = [
     href: '/ingrown-toenail-treatment/',
     title: 'Ingrown Toenail Treatment',
     image: ingrownNailImg,
+    shortSummary:
+      'Gentle in-office relief, non-surgical B/S nail bracing, and minor procedures for painful or curved nails.',
     summary:
       'An ingrown toenail can cause pain, redness, swelling, tenderness, and sometimes infection. Dr. Soltani provides evaluation and treatment for general podiatry patients age 16 and older.',
     description:
@@ -123,6 +129,8 @@ export const conditions = [
     href: '/fungal-toenail-treatment/',
     title: 'Fungal Toenail Treatment',
     image: fungalToenailImg,
+    shortSummary:
+      'Accurate diagnosis, medical debridement, and targeted clinical therapy for thick, discolored toenails.',
     summary:
       'Dr. Celine Soltani evaluates and treats fungal and abnormal toenails at Foot Doctor of Delray. Not every thick or discolored toenail is caused by fungus, so proper evaluation can be important before beginning treatment.',
     description:
@@ -152,6 +160,8 @@ export const conditions = [
     href: '/diabetic-foot-wound-care/',
     title: 'Diabetic Foot & Wound Care',
     image: diabeticWoundImg,
+    shortSummary:
+      'Preventative screenings, protective nail and callus care, and specialized treatment for non-healing sores.',
     summary:
       'Diabetes, neuropathy, circulation problems, and other medical conditions can increase the risk of foot complications. Dr. Soltani provides evaluation, preventive foot care, and wound treatment for general podiatry patients age 16 and older.',
     description:
@@ -181,6 +191,8 @@ export const conditions = [
     href: '/treatment-for-tendon-pain-injuries/',
     title: 'Treatment for Tendon Pain & Injuries',
     image: sportsInjuriesImg,
+    shortSummary:
+      'Conservative rehabilitation for Achilles tendonitis, ankle sprains, sports strains, and soft-tissue injuries.',
     summary:
       'Tendons support movement and stability of the foot and ankle. Tendon problems can develop gradually from overuse or degeneration or occur suddenly after an injury. Dr. Soltani evaluates and treats tendon and soft-tissue conditions with an emphasis on conservative care.',
     description:
@@ -210,6 +222,8 @@ export const conditions = [
     href: '/neuropathy-treatment/',
     title: 'Neuropathy Treatment',
     image: neuropathyImg,
+    shortSummary:
+      'Comprehensive clinical evaluation and non-invasive relief for numbness, tingling, burning, or pins and needles.',
     summary:
       'Neuropathy can cause uncomfortable or reduced sensation in the feet. Dr. Soltani evaluates nerve-related foot symptoms in general podiatry patients age 16 and older.',
     description:

@@ -1,20 +1,33 @@
 import { useState } from 'react'
 import { Footprints, Menu, X, ChevronDown } from 'lucide-react'
 import { clinicData } from '@/data/clinicData'
-import { mainNavigation, conditionsDropdown } from '@/data/navigationData'
+import { mainNavigation, conditionsDropdown, servicesDropdown } from '@/data/navigationData'
 import { Button } from '@/components/common/Button'
 import { NavLink } from '@/components/common/NavLink'
-import { useRouter } from '@/hooks/useRouter'
+import { Link, useLocation } from 'react-router-dom'
 
 export function Header() {
   const [open, setOpen] = useState(false)
   const [mobileConditionsOpen, setMobileConditionsOpen] = useState(false)
-  const { navigate, path } = useRouter()
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const { pathname } = useLocation()
 
   const isConditionActive =
-    path.startsWith('/conditions') ||
+    pathname.startsWith('/conditions') ||
     conditionsDropdown.some(
-      (c) => path === c.href || path === c.href.replace(/\/+$/, '') || path === c.href.replace(/^\//, '')
+      (c) =>
+        pathname === c.href ||
+        pathname === c.href.replace(/\/+$/, '') ||
+        pathname === c.href.replace(/^\//, '')
+    )
+
+  const isServiceActive =
+    pathname.startsWith('/services') ||
+    servicesDropdown.some(
+      (s) =>
+        pathname === s.href ||
+        pathname === s.href.replace(/\/+$/, '') ||
+        pathname === s.href.replace(/^\//, '')
     )
 
   return (
@@ -28,12 +41,8 @@ export function Header() {
 
       <header className="sticky top-0 z-40 border-b border-[#dce5e0] bg-[#f8faf6]/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
-          <a
-            href="/"
-            onClick={(e) => {
-              e.preventDefault()
-              navigate('/')
-            }}
+          <Link
+            to="/"
             className="flex items-center gap-3 text-[#163b4a]"
           >
             <span className="grid size-10 place-items-center rounded-full bg-[#dcebe5]">
@@ -45,20 +54,17 @@ export function Header() {
                 {clinicData.tagline}
               </span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-8 lg:flex">
             {mainNavigation.map(({ label, href }) => {
+              // Conditions Dropdown
               if (label === 'Conditions') {
                 return (
                   <div key={href} className="relative group py-2">
-                    <a
-                      href={href}
-                      onClick={(e) => {
-                        e.preventDefault()
-                        navigate(href)
-                      }}
+                    <Link
+                      to={href}
                       className={`inline-flex items-center gap-1.5 text-base font-medium transition-colors hover:text-[#163b4a] ${
                         isConditionActive ? 'text-[#163b4a] font-bold' : 'text-[#4a6260]'
                       }`}
@@ -68,23 +74,54 @@ export function Header() {
                         size={14}
                         className="transition-transform duration-200 group-hover:rotate-180 text-[#65817b]"
                       />
-                    </a>
+                    </Link>
 
                     {/* Dropdown Menu */}
                     <div className="absolute top-full left-0 w-80 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto">
                       <div className="bg-white border border-[#dce5e0] shadow-2xl rounded-sm overflow-hidden divide-y divide-[#edf2ee]">
                         {conditionsDropdown.map((subItem) => (
-                          <a
+                          <Link
                             key={subItem.label}
-                            href={subItem.href}
-                            onClick={(e) => {
-                              e.preventDefault()
-                              navigate(subItem.href)
-                            }}
+                            to={subItem.href}
                             className="block px-5 py-3.5 text-[15px] font-medium text-[#163b4a] hover:bg-[#edf5f1] hover:text-[#0b2530] transition-colors leading-relaxed tracking-wide"
                           >
                             {subItem.label}
-                          </a>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
+
+              // Services Dropdown
+              if (label === 'Services') {
+                return (
+                  <div key={href} className="relative group py-2">
+                    <Link
+                      to={href}
+                      className={`inline-flex items-center gap-1.5 text-base font-medium transition-colors hover:text-[#163b4a] ${
+                        isServiceActive ? 'text-[#163b4a] font-bold' : 'text-[#4a6260]'
+                      }`}
+                    >
+                      <span>Services</span>
+                      <ChevronDown
+                        size={14}
+                        className="transition-transform duration-200 group-hover:rotate-180 text-[#65817b]"
+                      />
+                    </Link>
+
+                    {/* Dropdown Menu */}
+                    <div className="absolute top-full left-0 w-72 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto">
+                      <div className="bg-white border border-[#dce5e0] shadow-2xl rounded-sm overflow-hidden divide-y divide-[#edf2ee]">
+                        {servicesDropdown.map((subItem) => (
+                          <Link
+                            key={subItem.label}
+                            to={subItem.href}
+                            className="block px-5 py-3.5 text-[15px] font-medium text-[#163b4a] hover:bg-[#edf5f1] hover:text-[#0b2530] transition-colors leading-relaxed tracking-wide"
+                          >
+                            {subItem.label}
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -120,6 +157,7 @@ export function Header() {
         {open && (
           <nav className="flex flex-col gap-3 border-t border-[#dce5e0] bg-[#f8faf6] px-6 py-5 lg:hidden max-h-[85vh] overflow-y-auto">
             {mainNavigation.map(({ label, href }) => {
+              // Mobile Conditions Accordion
               if (label === 'Conditions') {
                 return (
                   <div key={href} className="border-b border-[#e5ece8] pb-2">
@@ -149,18 +187,59 @@ export function Header() {
                     {mobileConditionsOpen && (
                       <div className="mt-2 ml-3 flex flex-col gap-1 border-l-2 border-[#163b4a]/20 pl-3 pt-1">
                         {conditionsDropdown.map((subItem) => (
-                          <a
+                          <Link
                             key={subItem.label}
-                            href={subItem.href}
-                            onClick={(e) => {
-                              e.preventDefault()
-                              navigate(subItem.href)
-                              setOpen(false)
-                            }}
+                            to={subItem.href}
+                            onClick={() => setOpen(false)}
                             className="text-sm font-medium text-[#526d68] hover:text-[#163b4a] py-1.5"
                           >
                             {subItem.label}
-                          </a>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              }
+
+              // Mobile Services Accordion
+              if (label === 'Services') {
+                return (
+                  <div key={href} className="border-b border-[#e5ece8] pb-2">
+                    <div className="flex items-center justify-between">
+                      <NavLink
+                        href={href}
+                        onClick={() => setOpen(false)}
+                        className="text-base font-medium text-[#4a6260]"
+                        activeClassName="text-[#163b4a] font-bold"
+                      >
+                        Services
+                      </NavLink>
+                      <button
+                        type="button"
+                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                        className="p-1.5 text-[#5f7a75]"
+                      >
+                        <ChevronDown
+                          size={16}
+                          className={`transition-transform duration-200 ${
+                            mobileServicesOpen ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                    </div>
+
+                    {mobileServicesOpen && (
+                      <div className="mt-2 ml-3 flex flex-col gap-1 border-l-2 border-[#163b4a]/20 pl-3 pt-1">
+                        {servicesDropdown.map((subItem) => (
+                          <Link
+                            key={subItem.label}
+                            to={subItem.href}
+                            onClick={() => setOpen(false)}
+                            className="text-sm font-medium text-[#526d68] hover:text-[#163b4a] py-1.5"
+                          >
+                            {subItem.label}
+                          </Link>
                         ))}
                       </div>
                     )}

@@ -1,10 +1,13 @@
 import { Check } from 'lucide-react'
+import { useParams } from 'react-router-dom'
 import { services } from '@/data/servicesData'
 import { PageHero } from '@/components/common/PageHero'
 import { Button } from '@/components/common/Button'
+import { FAQSection } from '@/components/common/FAQSection'
 import { AppointmentCTA } from '@/components/common/AppointmentCTA'
 
-export function ServiceDetailPage({ slug }) {
+export function ServiceDetailPage() {
+  const { slug } = useParams()
   const item = services.find((x) => x.slug === slug) || services[0]
 
   return (
@@ -54,6 +57,7 @@ export function ServiceDetailPage({ slug }) {
         </aside>
       </main>
 
+      <FAQSection />
       <AppointmentCTA />
     </>
   )

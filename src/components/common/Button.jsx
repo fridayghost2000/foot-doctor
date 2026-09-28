@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { useRouter } from '@/hooks/useRouter'
+import { Link, useNavigate } from 'react-router-dom'
 
 export function Button({
   children,
@@ -10,8 +10,6 @@ export function Button({
   onClick,
   type = 'button',
 }) {
-  const { navigate } = useRouter()
-
   const variantStyles = {
     primary: 'bg-[#163b4a] text-white hover:bg-[#0f2e3a]',
     secondary:
@@ -23,20 +21,21 @@ export function Button({
     'inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold transition-all cursor-pointer'
   const combinedClass = `${baseStyles} ${variantStyles[variant] || variantStyles.primary} ${className}`
 
+  // External links or tel/mailto
   if (href && !onClick && type !== 'submit') {
-    const handleClick = (e) => {
-      if (href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:')) {
-        return
-      }
-      e.preventDefault()
-      navigate(href)
+    if (href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:')) {
+      return (
+        <a href={href} className={combinedClass}>
+          {children}
+          {icon && <ArrowRight size={16} />}
+        </a>
+      )
     }
-
     return (
-      <a href={href} onClick={handleClick} className={combinedClass}>
+      <Link to={href} className={combinedClass}>
         {children}
         {icon && <ArrowRight size={16} />}
-      </a>
+      </Link>
     )
   }
 

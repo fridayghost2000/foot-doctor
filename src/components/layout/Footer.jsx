@@ -2,10 +2,9 @@ import { MapPin, Phone, Printer, Clock, Navigation, Calendar, Footprints } from 
 import { clinicData } from '@/data/clinicData'
 import { footerExploreLinks } from '@/data/navigationData'
 import { NavLink } from '@/components/common/NavLink'
-import { useRouter } from '@/hooks/useRouter'
+import { Link } from 'react-router-dom'
 
 export function Footer() {
-  const { navigate } = useRouter()
   return (
     <footer className="bg-[#12313e] text-[#edf4ef] border-t border-[#234d5e]">
       {/* Main Content & Google Maps Section */}
@@ -16,12 +15,8 @@ export function Footer() {
             <div>
               {/* Logo, Doctor & Practice Intro */}
               <div className="mb-6">
-                <a
-                  href="/"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    navigate('/')
-                  }}
+                <Link
+                  to="/"
                   className="mb-4 inline-flex items-center gap-3 text-white transition-opacity hover:opacity-90"
                 >
                   <span className="grid size-11 place-items-center rounded-full bg-[#dcebe5] text-[#163b4a] shadow-sm">
@@ -33,7 +28,7 @@ export function Footer() {
                       {clinicData.tagline}
                     </span>
                   </span>
-                </a>
+                </Link>
 
                 <h3 className="font-serif text-2xl text-white font-medium mt-1">
                   {clinicData.doctorName}

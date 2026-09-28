@@ -1,0 +1,8 @@
+export { FootAnkleConditions } from './pages/FootAnkleConditions'
+export { HeelPainPlantarFasciitis } from './pages/HeelPainPlantarFasciitis'
+export { IngrownToenailTreatment } from './pages/IngrownToenailTreatment'
+export { FungalToenailTreatment } from './pages/FungalToenailTreatment'
+export { DiabeticFootWoundCare } from './pages/DiabeticFootWoundCare'
+export { TendonPainInjuries } from './pages/TendonPainInjuries'
+export { NeuropathyTreatment } from './pages/NeuropathyTreatment'
+export { ConditionDetailTemplate } from './components/ConditionDetailTemplate'

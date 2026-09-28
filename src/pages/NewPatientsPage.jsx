@@ -1,6 +1,7 @@
 import { Phone, FileText, CreditCard, HelpCircle, ShieldCheck, CheckCircle2, Clock, MapPin, Calendar } from 'lucide-react'
 import { clinicData } from '@/data/clinicData'
 import { PageHero } from '@/components/common/PageHero'
+import { FAQSection } from '@/components/common/FAQSection'
 import { AppointmentCTA } from '@/components/common/AppointmentCTA'
 import { Button } from '@/components/common/Button'
 
@@ -164,6 +165,7 @@ export function NewPatientsPage() {
         </div>
       </main>
 
+      <FAQSection />
       <AppointmentCTA />
     </>
   )

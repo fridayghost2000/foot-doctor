@@ -16,6 +16,12 @@ export const conditionsDropdown = [
   { label: 'Neuropathy Treatment', href: '/neuropathy-treatment/' },
 ]
 
+export const servicesDropdown = [
+  { label: 'Treatments & Services', href: '/treatments-services/' },
+  { label: 'B/S Nail Brace', href: '/services/bs-nail-brace' },
+  { label: 'Medical Nail Care', href: '/services/medical-nail-care' },
+]
+
 export const footerExploreLinks = [
   { label: 'About the practice', href: '/about' },
   { label: 'Conditions', href: '/conditions' },
