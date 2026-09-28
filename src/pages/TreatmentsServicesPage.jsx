@@ -7,7 +7,8 @@ import {
   Scissors,
   HeartPulse,
   Bone,
-  Check,
+  Layers,
+  Sparkle,
   ArrowRight,
   Phone,
   Calendar,
@@ -29,56 +30,99 @@ export function TreatmentsServicesPage() {
     },
     {
       title: 'Heel Pain & Plantar Fasciitis Treatment',
-      text: 'Treatment for heel pain and plantar fasciitis depends on the underlying cause and may include stretching, footwear changes, supportive devices, medications, injections, and other conservative treatment options.',
+      text: 'Treatment for heel pain and plantar fasciitis depends on the underlying cause and may include targeted stretching, footwear changes, custom supportive devices, medications, injections, and other conservative treatment options.',
       icon: Footprints,
       link: '/heel-pain-plantar-fasciitis/',
     },
     {
       title: 'Ingrown Toenail Treatment',
-      text: 'Treatment options depend on the severity of the ingrown toenail and whether the problem is recurring. For selected patients, the advanced B/S Nail Brace offers a gentle, non-surgical option designed to reduce excessive nail curvature and pressure along the sides of the nail. Application is non-painful, with no downtime or recovery period, allowing patients to return to their normal activities right away.',
+      text: 'Treatment options depend on the severity of the ingrown toenail and whether the problem is recurring. For selected patients, the advanced B/S Nail Brace offers a gentle, non-surgical option designed to reduce excessive nail curvature and pressure without downtime.',
       icon: Scissors,
       link: '/ingrown-toenail-treatment/',
       featuredBadge: 'B/S Nail Brace Available',
     },
     {
-      title: 'In-Office Procedures & Soft-Tissue Surgery',
-      text: 'Selected minor procedures and soft-tissue procedures may be performed in the office when appropriate. Treatment recommendations depend on the diagnosis, examination findings, and individual patient needs.',
-      icon: Stethoscope,
+      title: 'Plantar Wart In-Office Therapy',
+      text: 'Plantar warts are caused by the HPV virus and spread easily through direct or indirect contact. We offer safe, gentle in-office cryotherapy, prescription keratolytics, and sterile debridement to effectively eliminate the viral core and restore healthy skin.',
+      icon: Sparkle,
+      link: '/plantar-wart/',
+      featuredBadge: 'In-Office Viral Therapy',
+    },
+    {
+      title: 'Bunion Care & Joint Alignment',
+      text: 'Bunions cause the big toe joint (MTP) to enlarge, shift, and become painful. We provide personalized conservative management—including custom biomechanical orthotics, protective gel padding, and footwear modifications—to slow progression and relieve discomfort without surgery.',
+      icon: Bone,
+      link: '/bunion/',
+      featuredBadge: 'Conservative Joint Care',
+    },
+    {
+      title: 'Corns & Calluses Clinical Reduction',
+      text: 'Corns and calluses develop as hyperkeratotic defense mechanisms against abnormal friction and pressure. Dr. Soltani provides painless, sterile in-office debridement, core reduction, custom offloading pads, and medical-grade moisturizers to prevent recurrence.',
+      icon: Layers,
+      link: '/corns-calluses/',
+      featuredBadge: 'Painless Sterile Debridement',
+    },
+    {
+      title: 'Diabetic Foot Ulcer & Wound Care',
+      text: 'Diabetic neuropathy and vascular disease can turn minor pressure spots into serious, non-healing ulcers. We provide meticulous clinical wound debridement, advanced antimicrobial moisture dressings, specialized offloading, and limb-preservation protocols.',
+      icon: HeartPulse,
+      link: '/foot-ulcer/',
+      featuredBadge: 'Limb Preservation Focus',
+    },
+    {
+      title: 'Flat Foot & Arch Stabilization',
+      text: 'Flat feet (pes planus) can alter overall skeletal alignment and cause radiating pain into the ankles, shins, and knees. We provide dynamic gait evaluations and custom functional prescription orthotics to rebalance the arches and eliminate kinetic strain.',
+      icon: Activity,
+      link: '/flat-foot/',
+      featuredBadge: 'Custom Orthotics',
+    },
+    {
+      title: 'Itchy Feet & Athlete’s Foot Treatment',
+      text: 'Perspiration and tight footwear create an ideal environment for contagious fungal infections (tinea pedis) to flourish. We accurately diagnose the cause and prescribe medical-grade antifungal therapies and moisture barrier repair to stop itching and heal cracked skin.',
+      icon: Sparkles,
+      link: '/itchy-feet/',
+      featuredBadge: 'Dermatological Relief',
     },
     {
       title: 'Diabetic & Preventive Foot Care',
-      text: 'Preventive foot care is especially important for patients with diabetes, neuropathy, circulation problems, or other risk factors. Regular evaluation can help identify problems early and reduce the risk of complications.',
+      text: 'Preventive foot care is essential for patients with diabetes, neuropathy, and circulation problems. Regular comprehensive evaluations help detect pressure spots and vascular changes early, preventing severe complications and skin breakdown.',
       icon: HeartPulse,
       link: '/diabetic-foot-wound-care/',
     },
     {
-      title: 'Fungal Nail Treatment',
-      text: 'Healthy-looking nails can be an important part of self-care and can help improve confidence. Thick, discolored, brittle, or abnormal toenails may be caused by fungus or other conditions. Proper evaluation can help determine the cause and the most appropriate treatment to improve the health and appearance of the nails.',
+      title: 'Fungal Toenail Treatment',
+      text: 'Thick, discolored, or brittle toenails caused by fungal pathogens are evaluated with precision. We offer comprehensive topical, oral, and clinical debridement options to eliminate fungal spores and restore clear, healthy nail growth.',
       icon: Sparkles,
       link: '/fungal-toenail-treatment/',
     },
     {
       title: 'Treatment of Tendon & Soft-Tissue Injuries',
-      text: 'Tendon and soft-tissue injuries may result from overuse, repetitive stress, sports activity, or acute injury. Multiple conservative treatment approaches may be available depending on the affected structure and severity of the condition. In addition to traditional conservative care, advanced non-surgical treatment options may be available for selected patients. Treatment recommendations are individualized based on the condition, examination, medical history, and treatment goals.',
+      text: 'Tendon and soft-tissue injuries may result from overuse, repetitive stress, athletic activity, or acute twists. We provide individualized conservative rehabilitation, functional strapping, gait retraining, and custom orthotics to ensure safe recovery.',
       icon: Activity,
       link: '/treatment-for-tendon-pain-injuries/',
     },
     {
-      title: 'Fracture & Injury Care',
-      text: 'Foot and ankle fractures and injuries require proper evaluation to determine the appropriate treatment. Early diagnosis and appropriate treatment are important for promoting a timely recovery and reducing the risk of complications. In-office X-rays are available when appropriate.',
-      icon: Bone,
-      featuredBadge: 'In-Office X-Rays',
-    },
-    {
-      title: 'Neuropathy Care',
-      text: 'Neuropathy symptoms may include burning, tingling, numbness, sensitivity, or other abnormal sensations. Treatment recommendations depend on the underlying cause and individual patient needs.',
+      title: 'Neuropathy Care & Nerve Relief',
+      text: 'Neuropathy symptoms include burning, tingling, numbness, pins and needles, or hypersensitivity in the feet. We provide comprehensive sensory threshold testing and non-invasive symptom management to protect balance and prevent injury.',
       icon: Activity,
       link: '/neuropathy-treatment/',
     },
     {
+      title: 'In-Office Procedures & Minor Surgery',
+      text: 'Selected minor procedures and soft-tissue treatments are performed gently and safely in our sterile office setting when medically indicated, based on thorough diagnosis and individual patient health history.',
+      icon: Stethoscope,
+    },
+    {
+      title: 'Fracture & Acute Injury Care',
+      text: 'Foot and ankle trauma, stress fractures, and acute injuries require prompt evaluation. In-office digital X-rays are available for immediate structural diagnosis, followed by targeted immobilization and recovery guidance.',
+      icon: Bone,
+      featuredBadge: 'In-Office X-Rays',
+    },
+    {
       title: 'Medical Nail Care',
-      text: 'Medical nail care is available for patients who need professional attention for thick, difficult, or problematic toenails. A Certified Medical Nail Technician is available in our office to provide specialized nail care based on individual needs and clinical findings.',
+      text: 'Specialized clinical nail care is available for patients with difficult, thick, or high-risk toenails. A Certified Medical Nail Technician is available in our office to provide sterile, individualized nail health services.',
       icon: Sparkles,
+      link: '/medical-nail-care/',
       featuredBadge: 'Certified Nail Technician',
     },
   ]
@@ -88,7 +132,7 @@ export function TreatmentsServicesPage() {
       <PageHero
         eyebrow="Comprehensive Podiatric Care"
         title="Treatments & Services"
-        text="Dr. Celine Soltani provides individualized treatment for foot and ankle conditions, with an emphasis on conservative care whenever medically appropriate. Treatment recommendations are based on the diagnosis, examination findings, medical history, and individual patient needs."
+        text="Dr. Celine Soltani provides individualized treatment for a comprehensive range of foot, ankle, and skin conditions, with an emphasis on conservative care whenever medically appropriate."
       />
 
       <main className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24 space-y-16">
@@ -113,7 +157,7 @@ export function TreatmentsServicesPage() {
                       </span>
                     ) : (
                       <span className="text-xs font-bold text-[#7a9992]">
-                        0{index + 1}
+                        {index + 1 < 10 ? `0${index + 1}` : index + 1}
                       </span>
                     )}
                   </div>

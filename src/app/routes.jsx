@@ -22,6 +22,12 @@ import {
   DiabeticFootWoundCare,
   TendonPainInjuries,
   NeuropathyTreatment,
+  PlantarWart,
+  Bunion,
+  CornsCalluses,
+  FootUlcer,
+  FlatFoot,
+  ItchyFeet,
 } from '@/features/conditions'
 
 export function AppRoutes() {
@@ -59,6 +65,24 @@ export function AppRoutes() {
 
       <Route path="/neuropathy-treatment" element={<NeuropathyTreatment />} />
       <Route path="/neuropathy-treatment/" element={<NeuropathyTreatment />} />
+
+      <Route path="/plantar-wart" element={<PlantarWart />} />
+      <Route path="/plantar-wart/" element={<PlantarWart />} />
+
+      <Route path="/bunion" element={<Bunion />} />
+      <Route path="/bunion/" element={<Bunion />} />
+
+      <Route path="/corns-calluses" element={<CornsCalluses />} />
+      <Route path="/corns-calluses/" element={<CornsCalluses />} />
+
+      <Route path="/foot-ulcer" element={<FootUlcer />} />
+      <Route path="/foot-ulcer/" element={<FootUlcer />} />
+
+      <Route path="/flat-foot" element={<FlatFoot />} />
+      <Route path="/flat-foot/" element={<FlatFoot />} />
+
+      <Route path="/itchy-feet" element={<ItchyFeet />} />
+      <Route path="/itchy-feet/" element={<ItchyFeet />} />
 
       {/* Services */}
       <Route path="/services" element={<ServicesPage />} />

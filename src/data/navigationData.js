@@ -14,6 +14,12 @@ export const conditionsDropdown = [
   { label: 'Diabetic Foot & Wound Care', href: '/diabetic-foot-wound-care/' },
   { label: 'Treatment for Tendon Pain & Injuries', href: '/treatment-for-tendon-pain-injuries/' },
   { label: 'Neuropathy Treatment', href: '/neuropathy-treatment/' },
+  { label: 'Plantar Wart', href: '/plantar-wart/' },
+  { label: 'Bunion', href: '/bunion/' },
+  { label: 'Corns & Calluses', href: '/corns-calluses/' },
+  { label: 'Foot Ulcer', href: '/foot-ulcer/' },
+  { label: 'Flat Foot', href: '/flat-foot/' },
+  { label: 'Itchy Feet', href: '/itchy-feet/' },
 ]
 
 export const servicesDropdown = [

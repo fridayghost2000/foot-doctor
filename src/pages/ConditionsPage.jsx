@@ -45,7 +45,7 @@ export function ConditionsPage() {
                     {/* Number Badge */}
                     <div className="absolute top-3.5 left-3.5">
                       <span className="inline-block rounded-full bg-[#163b4a]/85 px-2.5 py-0.5 text-xs font-bold tracking-wider text-[#dcebe5] backdrop-blur-sm border border-white/20">
-                        0{i + 1}
+                        {i + 1 < 10 ? `0${i + 1}` : i + 1}
                       </span>
                     </div>
 
@@ -65,7 +65,7 @@ export function ConditionsPage() {
                 >
                   <div className="mb-2.5 flex items-center gap-2">
                     <span className="font-serif text-xs sm:text-sm font-semibold tracking-wider text-[#52776c] uppercase">
-                      0{i + 1} · Specialty Podiatry Care
+                      {i + 1 < 10 ? `0${i + 1}` : i + 1} · Specialty Podiatry Care
                     </span>
                   </div>
 
