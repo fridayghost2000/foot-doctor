@@ -69,7 +69,7 @@ export function FAQSection() {
                     <span
                       className={`grid size-8 shrink-0 place-items-center rounded-full transition-transform duration-300 ${
                         isOpen
-                          ? 'rotate-180 bg-[#163b4a] text-white'
+                          ? 'rotate-180 bg-[#0077c8] text-white'
                           : 'bg-[#edf3ee] text-[#52776c]'
                       }`}
                     >

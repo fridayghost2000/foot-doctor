@@ -101,14 +101,14 @@ export function Testimonials() {
             <button
               onClick={handlePrev}
               aria-label="Previous testimonial"
-              className="grid size-12 place-items-center rounded-full border border-[#cbd9d5] bg-[#f8faf6] text-[#163b4a] transition-all hover:bg-[#163b4a] hover:text-white hover:border-[#163b4a] cursor-pointer"
+              className="grid size-12 place-items-center rounded-full border border-[#cbd9d5] bg-[#f8faf6] text-[#163b4a] transition-all hover:bg-[#0077c8] hover:text-white hover:border-[#0077c8] cursor-pointer"
             >
               <ChevronLeft size={20} />
             </button>
             <button
               onClick={handleNext}
               aria-label="Next testimonial"
-              className="grid size-12 place-items-center rounded-full border border-[#cbd9d5] bg-[#f8faf6] text-[#163b4a] transition-all hover:bg-[#163b4a] hover:text-white hover:border-[#163b4a] cursor-pointer"
+              className="grid size-12 place-items-center rounded-full border border-[#cbd9d5] bg-[#f8faf6] text-[#163b4a] transition-all hover:bg-[#0077c8] hover:text-white hover:border-[#0077c8] cursor-pointer"
             >
               <ChevronRight size={20} />
             </button>
@@ -190,7 +190,7 @@ export function Testimonials() {
               aria-label={`Go to slide ${idx + 1}`}
               className={`h-2.5 transition-all duration-300 rounded-full cursor-pointer ${
                 currentIndex === idx
-                  ? 'w-8 bg-[#163b4a]'
+                  ? 'w-8 bg-[#0077c8]'
                   : 'w-2.5 bg-[#cbd9d5] hover:bg-[#8da89f]'
               }`}
             />

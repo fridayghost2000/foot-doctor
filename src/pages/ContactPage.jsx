@@ -146,9 +146,9 @@ export function ContactPage() {
           </div>
         </div>
 
-        <div className="bg-[#163b4a] p-8 text-white rounded-xl shadow-lg">
+        <div className="bg-[#0077c8] p-8 text-white rounded-xl shadow-lg">
           <h3 className="font-serif text-3xl">Request an appointment</h3>
-          <p className="mt-2 text-xs text-[#a9c2be]">
+          <p className="mt-2 text-xs text-white/85">
             Dr. Celine Soltani is accepting new patients. Fill out this form to schedule your consultation.
           </p>
           <form className="mt-7 flex flex-col gap-4" onSubmit={handleSubmit}>
@@ -156,30 +156,30 @@ export function ContactPage() {
               required
               aria-label="Name"
               placeholder="Your name"
-              className="border-b border-[#54727b] bg-transparent px-0 py-3 text-sm outline-none placeholder:text-[#a9c2be] focus:border-white"
+              className="border-b border-white/40 bg-transparent px-0 py-3 text-sm outline-none placeholder:text-white/70 focus:border-white"
             />
             <input
               required
               type="email"
               aria-label="Email"
               placeholder="Email address"
-              className="border-b border-[#54727b] bg-transparent px-0 py-3 text-sm outline-none placeholder:text-[#a9c2be] focus:border-white"
+              className="border-b border-white/40 bg-transparent px-0 py-3 text-sm outline-none placeholder:text-white/70 focus:border-white"
             />
             <input
               aria-label="Phone"
               placeholder="Phone number"
-              className="border-b border-[#54727b] bg-transparent px-0 py-3 text-sm outline-none placeholder:text-[#a9c2be] focus:border-white"
+              className="border-b border-white/40 bg-transparent px-0 py-3 text-sm outline-none placeholder:text-white/70 focus:border-white"
             />
             <textarea
               required
               aria-label="How can we help?"
               placeholder="How can we help?"
               rows={3}
-              className="resize-none border-b border-[#54727b] bg-transparent px-0 py-3 text-sm outline-none placeholder:text-[#a9c2be] focus:border-white"
+              className="resize-none border-b border-white/40 bg-transparent px-0 py-3 text-sm outline-none placeholder:text-white/70 focus:border-white"
             />
             <button
               type="submit"
-              className="mt-3 inline-flex items-center justify-center gap-2 bg-[#dcebe5] px-5 py-3 text-sm font-semibold text-[#163b4a] hover:bg-white cursor-pointer rounded transition-colors"
+              className="mt-3 inline-flex items-center justify-center gap-2 bg-white px-5 py-3 text-sm font-semibold text-[#0077c8] hover:bg-white/90 cursor-pointer rounded transition-colors shadow-sm"
             >
               Send request <ArrowRight size={16} />
             </button>

@@ -91,9 +91,9 @@ export function HomePage() {
                 className="size-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-5 -left-5 bg-[#163b4a] p-5 text-white shadow-xl">
-              <p className="font-serif text-3xl">Care that listens.</p>
-              <p className="mt-1 text-xs tracking-wide text-[#b9ceca]">
+            <div className="absolute -bottom-5 -left-5 bg-[#0077c8] p-5 text-white shadow-xl rounded-sm">
+              <p className="font-serif text-3xl text-white">Care that listens.</p>
+              <p className="mt-1 text-xs tracking-wide text-white/90">
                 Individualized, conservative when appropriate
               </p>
             </div>
@@ -117,12 +117,12 @@ export function HomePage() {
             {clinicData.whyChooseUs.map((feature, idx) => (
               <div
                 key={feature.id}
-                className="group relative flex flex-col justify-between border border-[#dce5e0] bg-[#fafcf9] p-6 transition-all duration-300 hover:border-[#163b4a] hover:bg-white hover:shadow-md rounded-sm min-h-[270px]"
+                className="group relative flex flex-col justify-between border border-[#dce5e0] bg-[#fafcf9] p-6 transition-all duration-300 hover:border-[#0077c8] hover:bg-white hover:shadow-md rounded-sm min-h-[270px]"
               >
                 {/* Top: Icon, Counter & Badge */}
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="grid size-10 place-items-center rounded-md bg-[#dcebe5] text-[#163b4a] transition-colors group-hover:bg-[#163b4a] group-hover:text-[#dcebe5]">
+                    <span className="grid size-10 place-items-center rounded-md bg-[#dcebe5] text-[#163b4a] transition-colors group-hover:bg-[#0077c8] group-hover:text-white">
                       {featureIcons[feature.iconName]}
                     </span>
                     <span className="font-serif text-xs font-semibold tracking-widest text-[#8aa39b]">
@@ -149,26 +149,26 @@ export function HomePage() {
             ))}
 
             {/* 6th Callout Card */}
-            <div className="flex flex-col justify-between bg-[#163b4a] p-6 text-white shadow-md rounded-sm">
+            <div className="flex flex-col justify-between bg-[#0077c8] p-6 text-white shadow-md rounded-sm">
               <div>
-                <span className="mb-2 inline-block rounded bg-[#255264] px-2 py-0.5 text-[10.5px] font-semibold tracking-wide text-[#dcebe5] uppercase">
+                <span className="mb-2 inline-block rounded bg-[#005fa3] px-2 py-0.5 text-[10.5px] font-semibold tracking-wide text-white uppercase">
                   Take The Next Step
                 </span>
-                <h3 className="font-serif text-xl leading-snug text-[#edf4ef] mt-1.5 font-medium">
+                <h3 className="font-serif text-xl leading-snug text-white mt-1.5 font-medium">
                   Experience personal care from your first visit.
                 </h3>
-                <p className="mt-2.5 text-[13.5px] leading-6 text-[#b9ceca]">
+                <p className="mt-2.5 text-[13.5px] leading-6 text-white/90">
                   Have questions about your foot pain or ready to schedule? Same-day appointments may be available.
                 </p>
               </div>
 
               <div className="mt-6 flex flex-col gap-2.5">
-                <Button href="/contact" variant="light" icon={true}>
+                <Button href="/contact" variant="secondary" icon={true} className="bg-white text-[#0077c8] hover:bg-white/90 border-0">
                   Request an appointment
                 </Button>
                 <a
                   href={clinicData.phoneHref}
-                  className="inline-flex items-center justify-center gap-2 text-xs font-medium text-[#d9e8e2] hover:underline pt-1"
+                  className="inline-flex items-center justify-center gap-2 text-xs font-medium text-white/90 hover:text-white hover:underline pt-1"
                 >
                   <Phone size={13} /> Call office: {clinicData.phone}
                 </a>

@@ -113,12 +113,12 @@ export function NewPatientsPage() {
           {/* Sidebar / Questions Section (4 cols) */}
           <div className="lg:col-span-4 space-y-8">
             {/* Questions Before Your Visit Box */}
-            <aside className="rounded-2xl bg-[#163b4a] p-8 text-white shadow-lg sticky top-28">
+            <aside className="rounded-2xl bg-[#0077c8] p-8 text-white shadow-lg sticky top-28">
               <div className="flex items-center gap-2.5">
-                <span className="grid size-8 place-items-center rounded-lg bg-white/15 text-[#dcebe5]">
+                <span className="grid size-8 place-items-center rounded-lg bg-white/20 text-white">
                   <HelpCircle size={18} />
                 </span>
-                <span className="text-xs font-bold tracking-wider text-[#dcebe5] uppercase">
+                <span className="text-xs font-bold tracking-wider text-white uppercase">
                   Patient Support
                 </span>
               </div>
@@ -127,11 +127,11 @@ export function NewPatientsPage() {
                 Questions Before Your Visit?
               </h3>
 
-              <p className="mt-4 text-sm leading-relaxed text-[#c2dcd6]">
+              <p className="mt-4 text-sm leading-relaxed text-white/90">
                 If you have questions about your appointment, insurance, or what to bring, please call our office at{' '}
                 <a
                   href={clinicData.phoneHref}
-                  className="font-semibold text-white underline hover:text-[#dcebe5]"
+                  className="font-semibold text-white underline hover:text-white/80"
                 >
                   (561) 498-3893
                 </a>
@@ -141,11 +141,11 @@ export function NewPatientsPage() {
               <div className="mt-8 flex flex-col gap-3">
                 <a
                   href={clinicData.phoneHref}
-                  className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-[#dcebe5] px-5 py-3.5 text-sm font-bold text-[#163b4a] shadow-sm hover:bg-white transition-all"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-white px-5 py-3.5 text-sm font-bold text-[#0077c8] shadow-sm hover:bg-white/90 transition-all"
                 >
                   <Phone size={16} /> Call (561) 498-3893
                 </a>
-                <Button href="/contact" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-center justify-center">
+                <Button href="/contact" variant="secondary" className="border border-white/50 text-white bg-transparent hover:bg-white hover:text-[#0077c8] text-center justify-center">
                   Contact Office
                 </Button>
               </div>

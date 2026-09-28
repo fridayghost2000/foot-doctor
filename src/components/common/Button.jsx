@@ -11,10 +11,10 @@ export function Button({
   type = 'button',
 }) {
   const variantStyles = {
-    primary: 'bg-[#163b4a] text-white hover:bg-[#0f2e3a]',
+    primary: 'bg-[#0077c8] text-white hover:bg-[#005fa3] shadow-sm',
     secondary:
-      'border border-[#cbd9d5] bg-white text-[#163b4a] hover:border-[#163b4a]',
-    light: 'bg-[#dcebe5] text-[#163b4a] hover:bg-white',
+      'border border-[#0077c8] bg-white text-[#0077c8] hover:bg-[#0077c8] hover:text-white',
+    light: 'bg-[#e6f4fb] text-[#0077c8] hover:bg-white',
   }
 
   const baseStyles =

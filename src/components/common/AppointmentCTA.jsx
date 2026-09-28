@@ -19,7 +19,7 @@ export function AppointmentCTA({
           <Button href={buttonHref}>{buttonText}</Button>
           <a
             href={clinicData.phoneHref}
-            className="inline-flex items-center gap-2 rounded bg-white px-5 py-3 text-sm font-semibold text-[#163b4a] shadow-sm transition-all hover:bg-[#163b4a] hover:text-white"
+            className="inline-flex items-center gap-2 rounded bg-white px-5 py-3 text-sm font-semibold text-[#0077c8] shadow-sm transition-all hover:bg-[#0077c8] hover:text-white"
           >
             <Phone size={15} />
             Call our office
